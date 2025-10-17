@@ -32,7 +32,7 @@ cy.contains('h2', 'Saved Experiences')
     cy.contains('button', 'See all')
       .scrollIntoView()           // 🔹 scrolls the button into view
       .should('be.visible')       // ensure it's visible
-      .and('have.text', 'See all')
+      .and('have.text', 'See all changes')
       .click()                    // now safely click it
   })
 

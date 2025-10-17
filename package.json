@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "cypress:open": "cypress open",
-    "cypress:run": "cypress run",
-    "test": "npm run cypress:open"
-  },
+  "cypress:open": "cypress open",
+  "cypress:run": "cypress run",
+  "test": "npm run cypress:open",
+  "runHeadless": "cypress run --headless --browser chrome"
+},
   "author": "",
   "license": "ISC",
   "devDependencies": {

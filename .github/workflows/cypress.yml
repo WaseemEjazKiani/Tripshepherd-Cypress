@@ -29,7 +29,7 @@ jobs:
       - name: Run Cypress tests (Headless Chrome)
         run: npm run runHeadless
 
-      # Optional: Upload Cypress screenshots/videos if tests fail sfsdfd asd
+      # Optional: Upload Cypress screenshots/videos if tests fail
       - name: Upload Cypress artifacts (on failure)
         if: failure()
         uses: actions/upload-artifact@v4
