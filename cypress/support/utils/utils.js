@@ -1,6 +1,6 @@
 export function loginIfNeeded() {
   cy.viewport(1920, 1080)
-  cy.visit('https://pr-113.ddl3rcnmmz93r.amplifyapp.com/')
+  cy.visit('https://pr-115.ddl3rcnmmz93r.amplifyapp.com/')
   cy.title().should('include', 'Discover Top Local-Led Tours')
 
   cy.get('button.cursor-pointer span.text-base')

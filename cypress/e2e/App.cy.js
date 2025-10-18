@@ -9,6 +9,8 @@ describe('Smoke Testing Unit', () => {
 
   it('should click Experiences and run its logic', () => {
     loginIfNeeded()
+    cy.get('img[alt="close"]').click();
+
     //   cy.get('nav a').contains('Home').should('be.visible').click({ force: true });
     cy.get('nav a').contains('Experiences').should('be.visible').click({ force: true });
     //Experience Handing should be visible
@@ -32,7 +34,7 @@ cy.contains('h2', 'Saved Experiences')
     cy.contains('button', 'See all')
       .scrollIntoView()           // 🔹 scrolls the button into view
       .should('be.visible')       // ensure it's visible
-      .and('have.text', 'See all changes')
+      .and('have.text', 'See all')
       .click()                    // now safely click it
   })
 
