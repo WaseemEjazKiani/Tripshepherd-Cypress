@@ -1,25 +1,23 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+Cypress.Commands.add('clickIfVisible', (selector, options = {}) => {
+  cy.get('body').then(($body) => {
+    const $element = $body.find(selector);
+    if ($element.length > 0 && $element.is(':visible')) {
+      cy.wrap($element).click(options);
+      cy.log(`✅ Clicked element: ${selector}`);
+    } else {
+      cy.log(`⚠️ Element not found or not visible: ${selector}`);
+    }
+  });
+});
+
+
+// Reusable command to select a duration
+Cypress.Commands.add('selectDuration', (value) => {
+  cy.get('.absolute.z-10 ul li')         // get all list items
+    .contains(new RegExp(`^${value}$`))  // match exact text
+    .should('be.visible')
+    .click();
+});
+
+
+

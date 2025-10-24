@@ -1,4 +1,4 @@
-export function loginIfNeeded() {
+export function loginAsUser() {
   cy.viewport(1920, 1080)
   cy.visit('https://pr-115.ddl3rcnmmz93r.amplifyapp.com/')
   cy.title().should('include', 'Discover Top Local-Led Tours')
@@ -32,6 +32,40 @@ export function loginIfNeeded() {
     })
 }
 
+export function loginAsHost() {
+  cy.viewport(1920, 1080)
+  cy.visit('https://pr-115.ddl3rcnmmz93r.amplifyapp.com/')
+  cy.title().should('include', 'Discover Top Local-Led Tours')
+
+  cy.get('button.cursor-pointer span.text-base')
+    .should('be.visible')
+    .then(($span) => {
+      const label = $span.text().trim()
+
+      if (label === 'Sign In') {
+        cy.contains('Sign In').should('be.visible').click()
+        cy.get("input[placeholder='1 (702) 123-4567']")
+          .should('exist')
+          .type('{backspace}')
+          .type('923488189787')
+
+        cy.contains('button', 'Continue').click()
+
+        cy.get('input[id^="otp-input-"]').each(($el, index) => {
+          cy.wrap($el).type(`${index + 1}`)
+        })
+
+        cy.contains('button', 'Continue').click()
+        cy.get('.text-secondary > div:nth-child(2) img').click();
+        // cy.contains('span.text-base', 'Profile')
+        //   .should('be.visible')
+        //   .and('have.text', 'Profile')
+      } else {
+        cy.log('Already logged in')
+      }
+    })
+}
+
 
 
 
@@ -46,3 +80,17 @@ export function loginIfNeeded() {
     //       expect(['Sign In', 'Log out']).to.include(label)
     //     }
     //   })
+
+
+    // ✅ Reusable function
+const getIframeDocument = (selector) => {
+  return cy
+    .get(selector)
+    .its('0.contentDocument').should('exist');
+};
+
+const getIframeBody = (selector) => {
+  return getIframeDocument(selector)
+    .its('body').should('not.be.empty')
+    .then(cy.wrap);
+};
