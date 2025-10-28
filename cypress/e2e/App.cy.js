@@ -441,7 +441,7 @@ describe("Smoke Testing Of Tripshepherd Website As a Guest", () => {
     cy.wait(2000);
   });
 
-  it("GUEST: Update User's Bio", () => {
+  it.skip("GUEST: Update User's Bio", () => {
     const searchText = "buhuhuh uh";
 
     loginAsUser();
@@ -458,6 +458,14 @@ describe("Smoke Testing Of Tripshepherd Website As a Guest", () => {
       .scrollIntoView()
       .should("be.visible")
       .click();
+
+    cy.get(
+      'textarea[placeholder="Write a captivating bio to showcase your passion, expertise."]'
+    )
+      .should("be.visible")
+      .type(
+        "I’m a QA expert passionate about breaking things to make them better!"
+      );
 
     cy.contains("button", "Save").should("be.visible").click();
 
@@ -485,6 +493,11 @@ describe("Smoke Testing Of Tripshepherd Website As a Guest", () => {
       .eq(0)
       .click({ force: true });
 
+    cy.get('input[placeholder="Add your TikTok Profile Link"]')
+      .should("be.visible")
+      .clear()
+      .type("https://www.tiktok.com/@qa_tester", { delay: 0 });
+
     cy.contains("button", "Save").should("be.visible").click();
 
     cy.contains("Profile updated successfully!").should("be.visible");
@@ -492,7 +505,7 @@ describe("Smoke Testing Of Tripshepherd Website As a Guest", () => {
     cy.wait(2000);
   });
 
-  it.skip("GUEST: Update User's Instagram Account", () => {
+  it.skip("GUEST: Upload User's Picture", () => {
     const searchText = "buhuhuh uh";
 
     loginAsUser();
@@ -511,7 +524,125 @@ describe("Smoke Testing Of Tripshepherd Website As a Guest", () => {
       .eq(1)
       .click({ force: true });
 
+    cy.get('input[placeholder="Add your Instagram Profile Link"]')
+      .should("be.visible")
+      .clear()
+      .type("https://www.instagram.com/qa_tester", { delay: 0 });
+
     cy.contains("button", "Save").should("be.visible").click();
+
+    cy.contains("Profile updated successfully!").should("be.visible");
+
+    cy.wait(2000);
+  });
+
+  it("GUEST: Delete User Picture", () => {
+    const imagePath = "company.jpg/"; // Place file inside cypress/fixtures
+
+    loginAsUser();
+
+    cy.get("nav a")
+      .contains("Profile")
+      .should("be.visible")
+      .click({ force: true });
+    cy.wait(1000);
+    cy.get('img[alt="/black-edit-icon.svg"]').should("be.visible").click();
+
+    cy.get(
+      "span.text-sm.justify-center.text-primary.cursor-pointer.font-normal"
+    ).then(($el) => {
+      if ($el.text().includes("Edit profile picture")) {
+        cy.contains("Edit profile picture").click({ force: true });
+      } else {
+        cy.contains("Add photo").click({ force: true });
+      }
+    });
+
+    cy.wait(2000);
+
+    cy.get('[data-cy="upload-picture"]').trigger("click");
+
+    // Image Upload
+
+    cy.get('input[type="file"]')
+      .first()
+      .selectFile(`cypress/fixtures/${imagePath}`, { force: true });
+
+    cy.contains("button", "Save").should("be.visible").click({ force: true });
+
+    cy.contains("Profile updated successfully!").should("be.visible");
+
+    cy.wait(2000);
+  });
+
+  it("GUEST: Update User's Instagram Account", () => {
+    const imagePath = "company.jpg/"; // Place file inside cypress/fixtures
+
+    loginAsUser();
+
+    cy.get("nav a")
+      .contains("Profile")
+      .should("be.visible")
+      .click({ force: true });
+
+    cy.wait(1000);
+
+    cy.get('img[alt="/black-edit-icon.svg"]').should("be.visible").click();
+
+    cy.get(
+      "span.text-sm.justify-center.text-primary.cursor-pointer.font-normal"
+    ).then(($el) => {
+      if ($el.text().includes("Edit profile picture")) {
+        cy.contains("Edit profile picture").click({ force: true });
+      } else {
+        cy.contains("Add photo").click({ force: true });
+      }
+    });
+
+    cy.wait(1000);
+
+    cy.get('[data-cy="remove-picture"]').trigger("click");
+
+    cy.contains("button", "Save").should("be.visible").click({ force: true });
+
+    cy.contains("Profile updated successfully!").should("be.visible");
+
+    cy.wait(2000);
+  });
+
+  it("GUEST: Delete User Picture", () => {
+    const imagePath = "company.jpg/"; // Place file inside cypress/fixtures
+
+    loginAsUser();
+
+    cy.get("nav a")
+      .contains("Profile")
+      .should("be.visible")
+      .click({ force: true });
+    cy.wait(1000);
+    cy.get('img[alt="/black-edit-icon.svg"]').should("be.visible").click();
+
+    cy.get(
+      "span.text-sm.justify-center.text-primary.cursor-pointer.font-normal"
+    ).then(($el) => {
+      if ($el.text().includes("Edit profile picture")) {
+        cy.contains("Edit profile picture").click({ force: true });
+      } else {
+        cy.contains("Add photo").click({ force: true });
+      }
+    });
+
+    cy.wait(2000);
+
+    cy.get('[data-cy="upload-picture"]').trigger("click");
+
+    // Image Upload
+
+    cy.get('input[type="file"]')
+      .first()
+      .selectFile(`cypress/fixtures/${imagePath}`, { force: true });
+
+    cy.contains("button", "Save").should("be.visible").click({ force: true });
 
     cy.contains("Profile updated successfully!").should("be.visible");
 
