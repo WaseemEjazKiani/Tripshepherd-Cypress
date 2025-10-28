@@ -1,96 +1,90 @@
 export function loginAsUser() {
-  cy.viewport(1920, 1080)
-  cy.visit('https://pr-115.ddl3rcnmmz93r.amplifyapp.com/')
-  cy.title().should('include', 'Discover Top Local-Led Tours')
+  cy.viewport(1920, 1080);
+  cy.visit("https://pr-121.ddl3rcnmmz93r.amplifyapp.com/");
+  cy.title().should("include", "Discover Top Local-Led Tours");
 
-  cy.get('button.cursor-pointer span.text-base')
-    .should('be.visible')
+  cy.get("button.cursor-pointer span.text-base")
+    .should("be.visible")
     .then(($span) => {
-      const label = $span.text().trim()
+      const label = $span.text().trim();
 
-      if (label === 'Sign In') {
-        cy.contains('Sign In').should('be.visible').click()
+      if (label === "Sign In") {
+        cy.contains("Sign In").should("be.visible").click();
         cy.get("input[placeholder='1 (702) 123-4567']")
-          .should('exist')
-          .type('{backspace}')
-          .type('923488189787')
+          .should("exist")
+          .type("{backspace}")
+          .type("923488189787");
 
-        cy.contains('button', 'Continue').click()
+        cy.contains("button", "Continue").click();
 
         cy.get('input[id^="otp-input-"]').each(($el, index) => {
-          cy.wrap($el).type(`${index + 1}`)
-        })
+          cy.wrap($el).type(`${index + 1}`);
+        });
 
-        cy.contains('button', 'Continue').click()
-        cy.get('.text-secondary > div:first-child img').click()
-        cy.contains('span.text-base', 'Profile')
-          .should('be.visible')
-          .and('have.text', 'Profile')
+        cy.contains("button", "Continue").click();
+        cy.get(".text-secondary > div:first-child img").click();
+        cy.contains("span.text-base", "Profile")
+          .should("be.visible")
+          .and("have.text", "Profile");
       } else {
-        cy.log('Already logged in')
+        cy.log("Already logged in");
       }
-    })
+    });
 }
 
 export function loginAsHost() {
-  cy.viewport(1920, 1080)
-  cy.visit('https://pr-115.ddl3rcnmmz93r.amplifyapp.com/')
-  cy.title().should('include', 'Discover Top Local-Led Tours')
+  cy.viewport(1920, 1080);
+  cy.visit("https://pr-121.ddl3rcnmmz93r.amplifyapp.com/");
+  cy.title().should("include", "Discover Top Local-Led Tours");
 
-  cy.get('button.cursor-pointer span.text-base')
-    .should('be.visible')
+  cy.get("button.cursor-pointer span.text-base")
+    .should("be.visible")
     .then(($span) => {
-      const label = $span.text().trim()
+      const label = $span.text().trim();
 
-      if (label === 'Sign In') {
-        cy.contains('Sign In').should('be.visible').click()
+      if (label === "Sign In") {
+        cy.contains("Sign In").should("be.visible").click();
         cy.get("input[placeholder='1 (702) 123-4567']")
-          .should('exist')
-          .type('{backspace}')
-          .type('923488189787')
+          .should("exist")
+          .type("{backspace}")
+          .type("923488189787");
 
-        cy.contains('button', 'Continue').click()
+        cy.contains("button", "Continue").click();
 
         cy.get('input[id^="otp-input-"]').each(($el, index) => {
-          cy.wrap($el).type(`${index + 1}`)
-        })
+          cy.wrap($el).type(`${index + 1}`);
+        });
 
-        cy.contains('button', 'Continue').click()
-        cy.get('.text-secondary > div:nth-child(2) img').click();
+        cy.contains("button", "Continue").click();
+        cy.get(".text-secondary > div:nth-child(2) img").click();
         // cy.contains('span.text-base', 'Profile')
         //   .should('be.visible')
         //   .and('have.text', 'Profile')
       } else {
-        cy.log('Already logged in')
+        cy.log("Already logged in");
       }
-    })
+    });
 }
 
+// else if (label === 'Log out') {
+//       expect(label).to.eq('Log out')
+//       cy.contains('Log out').should('be.visible').click()
+//       cy.contains('Sign In', { timeout: 10000 }).should('be.visible')
 
+//     } else {
+//       cy.log(`Unexpected button text: ${label}`)
+//       expect(['Sign In', 'Log out']).to.include(label)
+//     }
+//   })
 
-
-
- // else if (label === 'Log out') {
-    //       expect(label).to.eq('Log out')
-    //       cy.contains('Log out').should('be.visible').click()
-    //       cy.contains('Sign In', { timeout: 10000 }).should('be.visible')
-
-    //     } else {
-    //       cy.log(`Unexpected button text: ${label}`)
-    //       expect(['Sign In', 'Log out']).to.include(label)
-    //     }
-    //   })
-
-
-    // ✅ Reusable function
+// ✅ Reusable function
 const getIframeDocument = (selector) => {
-  return cy
-    .get(selector)
-    .its('0.contentDocument').should('exist');
+  return cy.get(selector).its("0.contentDocument").should("exist");
 };
 
 const getIframeBody = (selector) => {
   return getIframeDocument(selector)
-    .its('body').should('not.be.empty')
+    .its("body")
+    .should("not.be.empty")
     .then(cy.wrap);
 };
