@@ -38,6 +38,7 @@ describe("GUEST: Update Profile Information", () => {
 
   it("GUEST: Update User's userName", () => {
     const searchText = "buhuhuh uh";
+    const randomNum = Math.floor(1000 + Math.random() * 9000);
 
     loginAsUser();
 
@@ -59,7 +60,7 @@ describe("GUEST: Update Profile Information", () => {
     cy.get('input[placeholder="Enter your username"]')
       .should("be.visible")
       .clear()
-      .type("Data");
+      .type(`Data${randomNum}`);
     cy.contains("button", "Save").should("be.visible").click();
 
     cy.contains("Profile updated successfully!").should("be.visible");
@@ -89,6 +90,7 @@ describe("GUEST: Update Profile Information", () => {
       'textarea[placeholder="Write a captivating bio to showcase your passion, expertise."]'
     )
       .should("be.visible")
+      .clear()
       .type(
         "I’m a QA expert passionate about breaking things to make them better!"
       );
