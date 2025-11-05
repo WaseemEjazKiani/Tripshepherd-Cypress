@@ -1,21 +1,28 @@
 name: Cypress Tests
 
+# Run workflow on push or pull request to the main branch
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
 
+    # Environment variables (GitHub Secrets)
+    # Add these under: Repository → Settings → Secrets and variables → Actions
+    env:
+      EMAIL_USER: ${{ secrets.EMAIL_USER }}
+      EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
+
     steps:
-      # Step 1: Checkout your repository
+      # Step 1: Checkout repository code
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # Step 2: Setup Node.js (use same version as your local machine)
+      # Step 2: Setup Node.js (use your local version)
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -25,11 +32,12 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # Step 4: Run Cypress in headless Chrome mode
-      - name: Run Cypress tests (Headless Chrome)
-        run: npm run runHeadless
+      # Step 4: Run Cypress tests + email notification on failure
+      # This runs your runCypressProgrammatic.js + sendEmailOnFail.js combo
+      - name: Run Cypress tests and send email on failure
+        run: npm run test:email
 
-      # Optional: Upload Cypress screenshots/videos if tests fail
+      # Step 5: Upload screenshots/videos if tests fail (for debugging)
       - name: Upload Cypress artifacts (on failure)
         if: failure()
         uses: actions/upload-artifact@v4

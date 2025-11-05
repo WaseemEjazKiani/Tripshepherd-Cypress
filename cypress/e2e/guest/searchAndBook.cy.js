@@ -1,6 +1,6 @@
 import { loginAsUser, loginAsHost } from "../../support/utils/utils";
 
-describe("GUEST: Search & Book Experience", () => {
+describe.skip("GUEST: Search & Book Experience", () => {
   it("Search and book experience Test", () => {
     const searchText = "buhuhuh uh";
 

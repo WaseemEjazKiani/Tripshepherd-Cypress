@@ -1,0 +1,623 @@
+{
+  "browserName": "electron",
+  "browserPath": "",
+  "browserVersion": "138.0.7204.251",
+  "config": {
+    "defaultCommandTimeout": 50000,
+    "pageLoadTimeout": 50000,
+    "projectRoot": "D:\\Automation\\Tripshephered",
+    "projectName": "Tripshephered",
+    "configFile": "cypress.config.js",
+    "isTextTerminal": true,
+    "reporter": "json",
+    "reporterOptions": {
+      "output": "D:\\Automation\\Tripshephered\\results.json"
+    },
+    "animationDistanceThreshold": 5,
+    "arch": "x64",
+    "baseUrl": null,
+    "blockHosts": null,
+    "chromeWebSecurity": true,
+    "clientCertificates": [],
+    "defaultBrowser": null,
+    "downloadsFolder": "D:\\Automation\\Tripshephered\\cypress\\downloads",
+    "env": {},
+    "execTimeout": 60000,
+    "experimentalCspAllowList": false,
+    "experimentalInteractiveRunEvents": false,
+    "experimentalRunAllSpecs": false,
+    "experimentalMemoryManagement": false,
+    "experimentalModifyObstructiveThirdPartyCode": false,
+    "injectDocumentDomain": false,
+    "experimentalOriginDependencies": false,
+    "experimentalPromptCommand": false,
+    "experimentalSourceRewriting": false,
+    "experimentalSingleTabRunMode": false,
+    "experimentalWebKitSupport": false,
+    "fileServerFolder": "D:\\Automation\\Tripshephered",
+    "fixturesFolder": "D:\\Automation\\Tripshephered\\cypress\\fixtures",
+    "excludeSpecPattern": "*.hot-update.js",
+    "includeShadowDom": false,
+    "justInTimeCompile": true,
+    "keystrokeDelay": 0,
+    "modifyObstructiveCode": true,
+    "numTestsKeptInMemory": 0,
+    "platform": "win32",
+    "port": 62063,
+    "projectId": null,
+    "redirectionLimit": 20,
+    "requestTimeout": 5000,
+    "resolvedNodePath": "C:\\Program Files\\nodejs\\node.exe",
+    "resolvedNodeVersion": "22.20.0",
+    "responseTimeout": 30000,
+    "retries": {
+      "runMode": 0,
+      "openMode": 0
+    },
+    "screenshotOnRunFailure": true,
+    "screenshotsFolder": "D:\\Automation\\Tripshephered\\cypress\\screenshots",
+    "slowTestThreshold": 10000,
+    "scrollBehavior": "top",
+    "supportFile": "D:\\Automation\\Tripshephered\\cypress\\support\\e2e.js",
+    "taskTimeout": 60000,
+    "testIsolation": true,
+    "trashAssetsBeforeRuns": true,
+    "userAgent": null,
+    "video": false,
+    "videoCompression": false,
+    "videosFolder": "D:\\Automation\\Tripshephered\\cypress\\videos",
+    "viewportHeight": 660,
+    "viewportWidth": 1000,
+    "waitForAnimations": true,
+    "watchForFileChanges": false,
+    "specPattern": "cypress/e2e/**/*.cy.{js,jsx,ts,tsx}",
+    "browsers": [
+      {
+        "channel": "stable",
+        "displayName": "Chrome",
+        "family": "chromium",
+        "majorVersion": "141",
+        "name": "chrome",
+        "path": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+        "version": "141.0.7390.125"
+      },
+      {
+        "channel": "stable",
+        "displayName": "Edge",
+        "family": "chromium",
+        "majorVersion": "142",
+        "name": "edge",
+        "path": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+        "version": "142.0.3595.53"
+      },
+      {
+        "channel": "stable",
+        "displayName": "Electron",
+        "family": "chromium",
+        "majorVersion": 138,
+        "name": "electron",
+        "path": "",
+        "version": "138.0.7204.251"
+      }
+    ],
+    "cypressBinaryRoot": "C:\\Users\\Tripshepherd\\AppData\\Local\\Cypress\\Cache\\15.4.0\\Cypress\\resources\\app",
+    "hosts": null,
+    "isInteractive": true,
+    "version": "15.4.0",
+    "testingType": "e2e",
+    "browser": null,
+    "cypressInternalEnv": "production"
+  },
+  "cypressVersion": "15.4.0",
+  "endedTestsAt": "2025-11-05T12:23:17.512Z",
+  "osName": "win32",
+  "osVersion": "Microsoft Windows 10 Pro - 10.0.19045",
+  "runs": [
+    {
+      "error": null,
+      "reporter": "json",
+      "reporterStats": {
+        "suites": 1,
+        "tests": 1,
+        "passes": 0,
+        "pending": 1,
+        "failures": 0,
+        "start": "2025-11-05T12:20:02.908Z",
+        "end": "2025-11-05T12:20:02.975Z",
+        "duration": 67
+      },
+      "screenshots": [],
+      "spec": {
+        "absolute": "D:/Automation/Tripshephered/cypress/e2e/guest/createAccount.cy.js",
+        "fileExtension": ".js",
+        "fileName": "createAccount",
+        "name": "createAccount.cy.js",
+        "relative": "cypress\\e2e\\guest\\createAccount.cy.js"
+      },
+      "stats": {
+        "duration": 81,
+        "endedAt": "2025-11-05T12:20:02.972Z",
+        "failures": 0,
+        "passes": 0,
+        "pending": 1,
+        "skipped": 0,
+        "startedAt": "2025-11-05T12:20:02.891Z",
+        "suites": 1,
+        "tests": 1
+      },
+      "tests": [
+        {
+          "attempts": [
+            {
+              "state": "pending"
+            }
+          ],
+          "displayError": null,
+          "duration": 0,
+          "state": "pending",
+          "title": [
+            "GUEST: Account Creation",
+            "Create Guest Account"
+          ]
+        }
+      ],
+      "video": null
+    },
+    {
+      "error": null,
+      "reporter": "json",
+      "reporterStats": {
+        "suites": 1,
+        "tests": 1,
+        "passes": 0,
+        "pending": 1,
+        "failures": 0,
+        "start": "2025-11-05T12:20:05.644Z",
+        "end": "2025-11-05T12:20:05.672Z",
+        "duration": 28
+      },
+      "screenshots": [],
+      "spec": {
+        "absolute": "D:/Automation/Tripshephered/cypress/e2e/guest/searchAndBook.cy.js",
+        "fileExtension": ".js",
+        "fileName": "searchAndBook",
+        "name": "searchAndBook.cy.js",
+        "relative": "cypress\\e2e\\guest\\searchAndBook.cy.js"
+      },
+      "stats": {
+        "duration": 33,
+        "endedAt": "2025-11-05T12:20:05.672Z",
+        "failures": 0,
+        "passes": 0,
+        "pending": 1,
+        "skipped": 0,
+        "startedAt": "2025-11-05T12:20:05.639Z",
+        "suites": 1,
+        "tests": 1
+      },
+      "tests": [
+        {
+          "attempts": [
+            {
+              "state": "pending"
+            }
+          ],
+          "displayError": null,
+          "duration": 0,
+          "state": "pending",
+          "title": [
+            "GUEST: Search & Book Experience",
+            "Search and book experience Test"
+          ]
+        }
+      ],
+      "video": null
+    },
+    {
+      "error": null,
+      "reporter": "json",
+      "reporterStats": {
+        "suites": 1,
+        "tests": 1,
+        "passes": 0,
+        "pending": 5,
+        "failures": 0,
+        "start": "2025-11-05T12:20:09.249Z",
+        "end": "2025-11-05T12:20:09.281Z",
+        "duration": 32
+      },
+      "screenshots": [],
+      "spec": {
+        "absolute": "D:/Automation/Tripshephered/cypress/e2e/guest/updateProfile.cy.js",
+        "fileExtension": ".js",
+        "fileName": "updateProfile",
+        "name": "updateProfile.cy.js",
+        "relative": "cypress\\e2e\\guest\\updateProfile.cy.js"
+      },
+      "stats": {
+        "duration": 48,
+        "endedAt": "2025-11-05T12:20:09.281Z",
+        "failures": 0,
+        "passes": 0,
+        "pending": 5,
+        "skipped": 0,
+        "startedAt": "2025-11-05T12:20:09.233Z",
+        "suites": 1,
+        "tests": 5
+      },
+      "tests": [
+        {
+          "attempts": [
+            {
+              "state": "pending"
+            }
+          ],
+          "displayError": null,
+          "duration": 0,
+          "state": "pending",
+          "title": [
+            "GUEST: Update Profile Information",
+            "GUEST: Update User's Name"
+          ]
+        },
+        {
+          "attempts": [
+            {
+              "state": "pending"
+            }
+          ],
+          "displayError": null,
+          "duration": 0,
+          "state": "pending",
+          "title": [
+            "GUEST: Update Profile Information",
+            "GUEST: Update User's userName"
+          ]
+        },
+        {
+          "attempts": [
+            {
+              "state": "pending"
+            }
+          ],
+          "displayError": null,
+          "duration": 0,
+          "state": "pending",
+          "title": [
+            "GUEST: Update Profile Information",
+            "GUEST: Update User's Bio"
+          ]
+        },
+        {
+          "attempts": [
+            {
+              "state": "pending"
+            }
+          ],
+          "displayError": null,
+          "duration": 0,
+          "state": "pending",
+          "title": [
+            "GUEST: Update Profile Information",
+            "GUEST: Update User's Tiktok Account"
+          ]
+        },
+        {
+          "attempts": [
+            {
+              "state": "pending"
+            }
+          ],
+          "displayError": null,
+          "duration": 0,
+          "state": "pending",
+          "title": [
+            "GUEST: Update Profile Information",
+            "GUEST: Upload User's Instagram"
+          ]
+        }
+      ],
+      "video": null
+    },
+    {
+      "error": null,
+      "reporter": "json",
+      "reporterStats": {
+        "suites": 1,
+        "tests": 3,
+        "passes": 3,
+        "pending": 0,
+        "failures": 0,
+        "start": "2025-11-05T12:20:12.555Z",
+        "end": "2025-11-05T12:21:55.240Z",
+        "duration": 102685
+      },
+      "screenshots": [],
+      "spec": {
+        "absolute": "D:/Automation/Tripshephered/cypress/e2e/guest/uploadProfilePicture.cy.js",
+        "fileExtension": ".js",
+        "fileName": "uploadProfilePicture",
+        "name": "uploadProfilePicture.cy.js",
+        "relative": "cypress\\e2e\\guest\\uploadProfilePicture.cy.js"
+      },
+      "stats": {
+        "duration": 102686,
+        "endedAt": "2025-11-05T12:21:55.236Z",
+        "failures": 0,
+        "passes": 3,
+        "pending": 0,
+        "skipped": 0,
+        "startedAt": "2025-11-05T12:20:12.550Z",
+        "suites": 1,
+        "tests": 3
+      },
+      "tests": [
+        {
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null,
+          "duration": 29335,
+          "state": "passed",
+          "title": [
+            "GUEST: Manage Profile Picture",
+            "GUEST: Upload User Picture first Round"
+          ]
+        },
+        {
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null,
+          "duration": 34326,
+          "state": "passed",
+          "title": [
+            "GUEST: Manage Profile Picture",
+            "GUEST: Remove User's Picture"
+          ]
+        },
+        {
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null,
+          "duration": 34379,
+          "state": "passed",
+          "title": [
+            "GUEST: Manage Profile Picture",
+            "GUEST: Upload User Picture Second Round"
+          ]
+        }
+      ],
+      "video": null
+    },
+    {
+      "error": null,
+      "reporter": "json",
+      "reporterStats": {
+        "suites": 1,
+        "tests": 1,
+        "passes": 0,
+        "pending": 1,
+        "failures": 0,
+        "start": "2025-11-05T12:21:58.229Z",
+        "end": "2025-11-05T12:21:58.261Z",
+        "duration": 32
+      },
+      "screenshots": [],
+      "spec": {
+        "absolute": "D:/Automation/Tripshephered/cypress/e2e/guest/videoCreation.cy.js",
+        "fileExtension": ".js",
+        "fileName": "videoCreation",
+        "name": "videoCreation.cy.js",
+        "relative": "cypress\\e2e\\guest\\videoCreation.cy.js"
+      },
+      "stats": {
+        "duration": 37,
+        "endedAt": "2025-11-05T12:21:58.259Z",
+        "failures": 0,
+        "passes": 0,
+        "pending": 1,
+        "skipped": 0,
+        "startedAt": "2025-11-05T12:21:58.222Z",
+        "suites": 1,
+        "tests": 1
+      },
+      "tests": [
+        {
+          "attempts": [
+            {
+              "state": "pending"
+            }
+          ],
+          "displayError": null,
+          "duration": 0,
+          "state": "pending",
+          "title": [
+            "GUEST: Video Creation",
+            "GUEST: Create Vedio"
+          ]
+        }
+      ],
+      "video": null
+    },
+    {
+      "error": null,
+      "reporter": "json",
+      "reporterStats": {
+        "suites": 1,
+        "tests": 1,
+        "passes": 0,
+        "pending": 1,
+        "failures": 0,
+        "start": "2025-11-05T12:22:01.586Z",
+        "end": "2025-11-05T12:22:01.621Z",
+        "duration": 35
+      },
+      "screenshots": [],
+      "spec": {
+        "absolute": "D:/Automation/Tripshephered/cypress/e2e/host/createExperience.cy.js",
+        "fileExtension": ".js",
+        "fileName": "createExperience",
+        "name": "createExperience.cy.js",
+        "relative": "cypress\\e2e\\host\\createExperience.cy.js"
+      },
+      "stats": {
+        "duration": 39,
+        "endedAt": "2025-11-05T12:22:01.618Z",
+        "failures": 0,
+        "passes": 0,
+        "pending": 1,
+        "skipped": 0,
+        "startedAt": "2025-11-05T12:22:01.579Z",
+        "suites": 1,
+        "tests": 1
+      },
+      "tests": [
+        {
+          "attempts": [
+            {
+              "state": "pending"
+            }
+          ],
+          "displayError": null,
+          "duration": 0,
+          "state": "pending",
+          "title": [
+            "HOST: Create Experience",
+            "HOST: Create Experience Test"
+          ]
+        }
+      ],
+      "video": null
+    },
+    {
+      "error": null,
+      "reporter": "json",
+      "reporterStats": {
+        "suites": 1,
+        "tests": 1,
+        "passes": 0,
+        "pending": 1,
+        "failures": 0,
+        "start": "2025-11-05T12:22:04.829Z",
+        "end": "2025-11-05T12:22:04.860Z",
+        "duration": 31
+      },
+      "screenshots": [],
+      "spec": {
+        "absolute": "D:/Automation/Tripshephered/cypress/e2e/host/deleteExperience.cy.js",
+        "fileExtension": ".js",
+        "fileName": "deleteExperience",
+        "name": "deleteExperience.cy.js",
+        "relative": "cypress\\e2e\\host\\deleteExperience.cy.js"
+      },
+      "stats": {
+        "duration": 36,
+        "endedAt": "2025-11-05T12:22:04.857Z",
+        "failures": 0,
+        "passes": 0,
+        "pending": 1,
+        "skipped": 0,
+        "startedAt": "2025-11-05T12:22:04.821Z",
+        "suites": 1,
+        "tests": 1
+      },
+      "tests": [
+        {
+          "attempts": [
+            {
+              "state": "pending"
+            }
+          ],
+          "displayError": null,
+          "duration": 0,
+          "state": "pending",
+          "title": [
+            "HOST: Delete Experience",
+            "HOST: Delete Experience Test"
+          ]
+        }
+      ],
+      "video": null
+    },
+    {
+      "error": null,
+      "reporter": "json",
+      "reporterStats": {
+        "suites": 1,
+        "tests": 2,
+        "passes": 2,
+        "pending": 0,
+        "failures": 0,
+        "start": "2025-11-05T12:22:08.089Z",
+        "end": "2025-11-05T12:23:17.514Z",
+        "duration": 69425
+      },
+      "screenshots": [],
+      "spec": {
+        "absolute": "D:/Automation/Tripshephered/cypress/e2e/smoke/smokeTests.cy.js",
+        "fileExtension": ".js",
+        "fileName": "smokeTests",
+        "name": "smokeTests.cy.js",
+        "relative": "cypress\\e2e\\smoke\\smokeTests.cy.js"
+      },
+      "stats": {
+        "duration": 69430,
+        "endedAt": "2025-11-05T12:23:17.512Z",
+        "failures": 0,
+        "passes": 2,
+        "pending": 0,
+        "skipped": 0,
+        "startedAt": "2025-11-05T12:22:08.082Z",
+        "suites": 1,
+        "tests": 2
+      },
+      "tests": [
+        {
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null,
+          "duration": 25625,
+          "state": "passed",
+          "title": [
+            "Smoke Testing Of Tripshepherd Website As a Guest/Host",
+            "Smoke Testing Of Tripshepherd Website As a GUEST"
+          ]
+        },
+        {
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null,
+          "duration": 35804,
+          "state": "passed",
+          "title": [
+            "Smoke Testing Of Tripshepherd Website As a Guest/Host",
+            "Smoke Testing Of Tripshepherd Website As a HOST"
+          ]
+        }
+      ],
+      "video": null
+    }
+  ],
+  "startedTestsAt": "2025-11-05T12:20:02.891Z",
+  "totalDuration": 172390,
+  "totalFailed": 0,
+  "totalPassed": 5,
+  "totalPending": 10,
+  "totalSkipped": 0,
+  "totalSuites": 8,
+  "totalTests": 15
+}

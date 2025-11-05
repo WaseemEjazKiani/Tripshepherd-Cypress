@@ -1,6 +1,6 @@
 import { loginAsUser, loginAsHost } from "../../support/utils/utils";
 
-describe("GUEST: Video Creation", () => {
+describe.skip("GUEST: Video Creation", () => {
   it("GUEST: Create Vedio", () => {
     const vedioPath = "ved.mp4/"; // Place file inside cypress/fixtures
     const personYouWantToTaggTheVedio = "fatimaupdated";

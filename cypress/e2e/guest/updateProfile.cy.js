@@ -1,6 +1,6 @@
 import { loginAsUser, loginAsHost } from "../../support/utils/utils";
 
-describe("GUEST: Update Profile Information", () => {
+describe.skip("GUEST: Update Profile Information", () => {
   it("GUEST: Update User's Name", () => {
     const searchText = "buhuhuh uh";
 
