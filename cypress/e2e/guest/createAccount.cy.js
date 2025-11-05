@@ -1,6 +1,6 @@
 import { loginAsUser, loginAsHost } from "../../support/utils/utils";
 
-describe.skip("GUEST: Account Creation", () => {
+describe("GUEST: Account Creation", () => {
   it("Create Guest Account", () => {
     const prefix = "9234";
 

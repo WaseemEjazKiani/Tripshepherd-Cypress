@@ -1,6 +1,6 @@
 import { loginAsUser, loginAsHost } from "../../support/utils/utils";
 
-describe.skip("HOST: Create Experience", () => {
+describe("HOST: Create Experience", () => {
   it("HOST: Create Experience Test", () => {
     loginAsHost();
 
