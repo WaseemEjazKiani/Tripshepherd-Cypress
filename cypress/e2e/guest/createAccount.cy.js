@@ -16,7 +16,8 @@ describe("GUEST: Account Creation", () => {
     const personEmail = `waseem${randomPart}@test.com`;
 
     cy.viewport(1920, 1080);
-    cy.visit("https://pr-121.ddl3rcnmmz93r.amplifyapp.com/");
+    // cy.visit("https://pr-121.ddl3rcnmmz93r.amplifyapp.com/");
+    cy.visit("https://pr-131.ddl3rcnmmz93r.amplifyapp.com/");
     cy.title().should("include", "Discover Top Local-Led Tours");
 
     cy.get("button.cursor-pointer span.text-base")
